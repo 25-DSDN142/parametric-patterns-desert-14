@@ -8,7 +8,7 @@ function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(DEVELOP_GLYPH);
   pWallpaper.output_mode(GRID_WALLPAPER);
   
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.resolution(A3);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
@@ -27,6 +27,12 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     stroke(255,174,147); // peach
     fill(210,73,51); // burnt orange
   }
+  if (circle3 == 50) {
+    strokeWeight(3); //Slightly thicker border
+    stroke(137,199,188); //aqua blue 
+    fill(213,233,251); // light blue 
+  }
+ 
   // vertical circles
   circle(DH,DH,circle3); // top left outer circle
   circle(DH,DH,circle2); // top left middle circle
@@ -58,10 +64,17 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
   arc(DH*4,DH*0,circle2,circle2,arch,arch*2); // top right arc
   arc(DH*4,DH*4,circle2,circle2,arch*2,arch*3); // bottom right arc
   arc(DH*0,DH*4,circle2,circle2,arch*3,arch*0); // bottom left arc
- // diamonds
+ // diamonds 
+  if (DH == 40) {
+    strokeWeight(1); // thin border
+    stroke(179,66,51); // light muted red
+    fill(117,26,53); // deeper muted red
+  }
+  if (DH == 50) {
   stroke(100,97,153); // warm light blue
   strokeWeight(3); // medium border
   fill(53,39,83); // warm dark blue
+  } 
   quad(DH,DH,DH*2,DH*2,DH,DH*3,DH*0,DH*2); // left diamond
   quad(DH*3,DH,DH*4,DH*2,DH*3,DH*3,DH*2,DH*2); // right diamond
   quad(DH*2,DH*3,DH*3,DH*4,DH*2,DH*5,DH,DH*4); // bottom diamond
